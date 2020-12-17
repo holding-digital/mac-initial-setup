@@ -50,14 +50,14 @@ brew install findutils
 brew install bash
 
 PACKAGES=(
+    zsh
     docker
     docker-compose
     git
     npm
+    yarn
     nvm
     vim
-    zsh
-    yarn
 )
 
 echo "Installing packages..."
@@ -96,6 +96,9 @@ echo "\nexport PATH=\$PATH:\$ANDROID_HOME/emulator" >> .zshrc
 echo "\nexport PATH=\$PATH:\$ANDROID_HOME/tools" >> .zshrc
 echo "\nexport PATH=\$PATH:\$ANDROID_HOME/tools/bin" >> .zshrc
 echo "\nexport PATH=\$PATH:\$ANDROID_HOME/platform-tools" >> .zshrc
+
+echo "Set default version to nodeJs"
+nvm install --lts && nvm use --lts
 
 echo "Creating folder structure"
 [[ ! -d Workspace ]] && mkdir Workspace
